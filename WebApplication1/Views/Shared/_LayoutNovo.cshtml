@@ -1,0 +1,358 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="Cache-Control" content="max-age=0,must-revalidate">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Wise Cloud</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/css/theme-wisetec.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="~/Content/css/wisetecNovo.css?r=@DateTime.Now.Millisecond">
+    <link rel="stylesheet" href="~/Content/css/wisetec_impressao.css?r=@DateTime.Now.Millisecond">
+    <script src="~/Content/js/pix/Pix.js"></script>
+    <script src="~/Content/js/jquery-1.11.3.min.js"></script>
+
+</head>
+<body>
+
+    <!-- Exibir mensagem de erro padrão -->
+
+    @RenderBody()
+
+    <script src="~/Content/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/js/jquery.mask.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="~/Content/js/jquery.mask.min.js"></script>
+
+
+    <script src="~/Content/js/lib-funcoes.js?r=@DateTime.Now.Millisecond"></script>
+    <script src="~/Content/js/lib-db.js?r=@DateTime.Now.Millisecond"></script>
+
+
+    <script src="~/Content/js/cep.js?r=@DateTime.Now.Millisecond"></script>
+
+    <script src="~/Scripts/tabs/b.tabs.js?r=@DateTime.Now.Millisecond"></script>
+
+
+
+    <!-- <script src="~/Scripts/LoadingSpinner/loading-spinner.js"></script>-->
+    <script src="~/Content/js/wisetec.js?r=@DateTime.Now.Millisecond"></script>
+    <script src="~/Content/js/wisetec-demo.js?r=@DateTime.Now.Millisecond"></script>
+    <script src="~/Scripts/jquery.table2excel.js?r=@DateTime.Now.Millisecond"></script>
+    <script src="https://kit.fontawesome.com/a945e0d916.js" crossorigin="anonymous"></script>
+    @*<script src="~/Scripts/tableHTMLExport.js"></script>*@
+
+    <!--IMPORTAÇÃO DOS NOVOS ARQUIVOS RESPONSAVEIS POR MOVER AS COLUNAS DAS TABELAS -->
+    <script src="~/Content/js/dragndrop.table.columns.min.js"></script>
+    <link rel="stylesheet" href="~/Content/css/dragndrop.table.columns.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    @*<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    @RenderSection("scripts", required: false)
+
+
+
+    <script>
+
+
+
+        $.fn.sorttable = function () {
+            this.find("thead th").each(function () {
+                $(this).parent().css("position", "relative");
+                $(this).find("a").css({ 'position': 'relative' });
+                //$(this).html("<a href='/tteste' style='z-index:99999;position:absolute'>Odr</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + $(this).html());
+            });
+        }
+
+        //$('table.StyleTable').dragtable();
+        $('table.StyleTable').sorttable();
+        $(function () {
+
+            // abrir páginas ta tabsheet quando chamadas pelas páginas do iFrame
+            $('a').on('click', function (e) {
+                var li = $(this).closest('li');
+                var url = $(li).attr('funurl');
+                if (url) {
+                    e.stopPropagation();
+                    var menuId = $(li).attr('mid');
+                    var title = $(this).text();
+                    top.$('#mainFrameTabs').bTabsAdd(menuId, title, url);
+                }
+            });
+        });
+    </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('.date').mask('00/00/0000');
+            $('.time').mask('00:00:00');
+            $('.date_time').mask('00/00/0000 00:00:00');
+            $('.cep').mask('00000-000');
+            $('.phone').mask('0000-0000');
+            $('.cell_phone').mask('(00) 0-0000-0000');
+            $('.phone_with_ddd').mask('(00) 0000-0000');
+            $('.phone_us').mask('(000) 000-0000');
+            $('.mixed').mask('AAA 000-S0S');
+            $('.rg').mask('00.000.000-0', { reverse: true });
+            $('.cpf').mask('000.000.000-00', { reverse: true });
+            $('.cnpj').mask('00.000.000/0000-00', { reverse: true });
+            $('.ie').mask('000.000.000.000', { reverse: true });
+            $('.money').mask('000.000.000.000.000,00', { reverse: true });
+            $('.money2').mask("#.##0,00", { reverse: true });
+            $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
+                translation: {
+                    'Z': {
+                        pattern: /[0-9]/, optional: true
+                    }
+                }
+            });
+            $('.ip_address').mask('099.099.099.099');
+            $('.percent').mask('##0,00%', { reverse: true });
+            $('.clear-if-not-match').mask("00/00/0000", { clearIfNotMatch: true });
+            $('.placeholder').mask("00/00/0000", { placeholder: "__/__/____" });
+            $('.fallback').mask("00r00r0000", {
+                translation: {
+                    'r': {
+                        pattern: /[\/]/,
+                        fallback: '/'
+                    },
+                    placeholder: "__/__/____"
+                }
+            });
+            $('.selectonfocus').mask("00/00/0000", { selectOnFocus: true });
+        });
+    </script>
+    <script>
+        //SCRIPT QUE TORNA AS COLUNAS DA TABLE MOVEIS, A TABELA DEVE ESTAR COM A CLASSE dragColumns
+        $('.dragColumns').dragableColumns({
+            drag: true,
+            dragClass: 'drag',
+            overClass: 'over',
+            movedContainerSelector: '.dnd-moved'
+        });
+
+    </script>
+
+    <div class="modal fade" id="myModalWhatsapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="z-index:99999">
+        <input type="hidden" id="tipo_envio_whats" value="" />
+        <input type="hidden" id="array_numeros" value="" />
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="titulo_modal_wpp" style="white-space: break-spaces">Enviar Pedido no Whatsapp</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="hidden" id="tipo_impressao" />
+                        </div>
+                        <div class="col-md-4" id="modal_numero_whats">
+                            <label class="control-label">Número do Destinatario</label>
+                            <input type="text" class="form-control" id="numero_wpp" />
+                        </div>
+                        <div class="col-md-12">
+                            <input type="hidden" id="id_venda_wpp" />
+
+                            <label class="control-label">Mensagem:</label>
+                            <textarea id="msg_adicional" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="$('#myModalWhatsapp').modal('hide')" class="btn btn-sm btn-cancel">Cancelar</button>
+                    <button type="button" onclick="enviarVenda($('#tipo_envio_whats').val())" class="btn btn-sm btn-success">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModalAlert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="z-index:99999">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="titulo_modal_wpp">Mensagem</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <textarea id="msg_modal_alert" class="form-control" style="min-height: 150px; max-height: 400px; resize: vertical"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="$('#myModalAlert').modal('hide')" class="btn btn-sm btn-cancel">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="modal_calculo_juros" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" style="width: 100%;" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Gerenciamento de Juros - Contas a <span id="_span_titulo_juros"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-md-6 text-left">
+                            <button class="btn btn-primary" onclick="calcular_modal_creditos();" style="margin-left:3px;">
+                                Calcular
+                                <span class="glyphicon glyphicon-cog" style="font-size:14px;margin-right: 4px;"></span>
+                            </button>
+
+                            <button class="btn btn-success" onclick="salvar_modal_creditos();" style="margin-left:3px;">
+                                Salvar Alterações
+                                <span class="glyphicon glyphicon-ok" style="font-size:14px;margin-right: 4px;"></span>
+                            </button>
+                        </div>
+
+
+                        <div class="col-md-6 text-right">
+                            <button type="button" class="btn btn-cancel" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                    <div class="row m-t-10">
+                        <div class="col-md-12">
+                            <div class="row">
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Tipo Operação</label>
+                                    <select class="form-control" id="ddl_tipo_operacao">
+                                        <option value="C">Compra</option>
+                                        <option value="A">Antecipação</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Valor Bruto R$</label>
+                                    <input type="text" class="form-control only-number text-right" data-accept-comma="1" id="_total_modal_juros" onblur="_total_modal_juros_blur()" />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Prazo Médio</label>
+                                    <input type="text" class="form-control only-number text-right" @*readonly*@ id="_prazo_modal_juros" />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Dias FIDC</label>
+                                    <input type="number" class="form-control text-right" id="_dias_modal_juros" value="0" />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Qtde Títulos</label>
+                                    <input type="number" class="form-control text-right" @*readonly*@ id="_qtde_registros_modal_juros" />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Tarifa p/ Título</label>
+                                    <input type="number" class="form-control text-right" id="_tarifa_modal_juros" onblur="_tarifa_modal_juros_blur()" />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Taxa final %</label>
+                                    <input type="text" class="form-control only-number text-right" data-accept-comma="1" id="_percentual_juros_modal_juros" onblur="_percentual_juros_modal_juros_blur()" />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Juros R$</label>
+                                    <input type="text" class="form-control only-number text-right" data-accept-comma="1" id="_valor_juros_modal_juros" onblur="_valor_juros_modal_juros_blur()" />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Boleto R$</label>
+                                    <input type="text" class="form-control only-number text-right" data-accept-comma="1" id="_valor_boleto_modal_juros" />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">TED R$</label>
+                                    <input type="text" class="form-control only-number text-right" data-accept-comma="1" id="_valor_TED_modal_juros" />
+                                </div>
+
+                                <div class="col-md-4">
+                                    <a href="javascript:;" onclick="PesquisarFornecedor()" class="btn-info" style="font-size:13px; padding: 1px 5px 2px 9px; float: left; border-radius: 5px;">
+                                        <span class="glyphicon glyphicon-search" style="margin:0px 5px 0px -5px;"></span>Fornecedor
+                                    </a>
+                                    <label id="lblCodCli_modal_juros" style="display:none"></label>
+                                    <input id="txtNome_modal_juros" type="text" class="form-control" value="" required="" readonly="">
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Valor Líquido R$</label>
+                                    <input type="text" class="form-control only-number text-right" readonly data-accept-comma="1" id="_valor_final_boleto_modal_juros" />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">Data Vencimento</label>
+                                    <input type="date" class="form-control" id="_data_venc_modal_juros" />
+                                </div>
+
+                                <div class="col-md-8">
+                                    <p id="div_msg_modal_juros"></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row m-t-10">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table StyleTable">
+                                    <thead style="background:#3498db; color:#fff;">
+                                        <tr>
+                                            <th>Emissão</th>
+                                            <th>Vencimento</th>
+                                            <th>Entidade</th>
+                                            <th>Prazo</th>
+                                            <th>Forma</th>
+                                            <th>Banco</th>
+                                            <th>Valor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody_itens_calculo_juros" style="font-size:12px;"></tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td class="text-right" colspan="3">Prazo Total:</td>
+                                            <td class="text-center prazo_total"></td>
+                                            <td class="text-right" colspan="2">Total R$:</td>
+                                            <td class="text-right total_rodape_original"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right" colspan="6">Qtde títulos:</td>
+                                            <td class="text-right qtde_registros"></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+/*GLOBAL PROJETO*/
+@media print {
+    .notprint {
+        visibility: hidden !important;
+        display: none !important;
+    }
+
+    .print {
+        visibility: visible;
+        display: block;
+    }
+}
+
+.print {
+    visibility: hidden;
+    display: none;
+}
+

@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-heading bg_padrao text-white">
+        <label>Cadastros - [Comunicados]</label>
+    </div>
+    <form>
+        <input type="hidden" name="vForm" value="" />
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <a onclick="" class="btn btn-primary active">
+                        <span class="bi bi-plus-lg" style="margin:0px 5px 0px -5px;"></span>Novo Cadastro
+                    </a>
+                </div>
+            </div>
+            <div class="row align-items-end m-t-5">
+                <div class="col-md-2">
+                    <label class="control-label">
+                        Filtro
+                    </label>
+                    <select name="vTP" id="vTP" class="form-select form-select-sm">
+                        <option value="D" selected="">Descrição</option>
+                        <option value="T">Título</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <input id="txtPesq" name="txtPesq" class="form-control form-control-sm">
+                </div>
+                <div class="col-md-3">
+                    <button id="btnPesq" class="btn btn_pesq btn-sm btn_mobile text-white">
+                        <span class="bi bi-search" style="margin:0px 5px 0px -5px;"></span>Pesquisar
+                    </button>
+                </div>
+            </div>
+            <div id="yesprint" class="form-group">
+                <div class="row m-t-5">
+
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-sm table-bordered dragColumns">
+                                <thead class="bg_padrao text-white fs-10">
+                                    <tr>
+                                        <th style="width:70px" data-nomedb="ID">wwwww</th>
+                                        <th style="width:220px" data-nomedb="TITULO">asdasd</th>
+                                        <th data-nomedb="DESCRICAO">asdas</th>
+                                        <th class="table-acoes"></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody style="font-size:12px;">
+
+                                        <tr>
+                                            <td class="ID">wwwww</td>
+                                            <td>aaassdsd</td>
+                                            <td>aaa</td>
+                                            
+                                        </tr>
+
+                                </tbody>
+                            </table>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

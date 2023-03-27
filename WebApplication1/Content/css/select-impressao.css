@@ -1,0 +1,90 @@
+﻿select {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+    -ms-appearance: none !important;
+    appearance: none !important;
+    border: none !important;
+    background: none !important;
+}
+
+table.StyleTable tr td > select {
+    -webkit-appearance: inherit !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+    -ms-appearance: none !important;
+    appearance: none !important;
+    border: none !important;
+    background: none !important;
+}
+
+html > body > div.form-group > table.table.StyleTable > thead > tr > td > select#cbx01.form-control.appearance {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+    -ms-appearance: none !important;
+    appearance: none !important;
+    border: none !important;
+    background: none !important;
+}
+
+html > body > div.form-group > table.table.StyleTable > thead > tr > td > select#cbx02.form-control.appearance {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+    -ms-appearance: none !important;
+    appearance: none !important;
+    border: none !important;
+    background: none !important;
+}
+
+html > body > div.form-group > table.table.StyleTable > thead > tr > td > select#cbx03.form-control.appearance {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+    -ms-appearance: none !important;
+    appearance: none !important;
+    border: none !important;
+    background: none !important;
+}
+
+html > body > div.form-group > table.table.StyleTable > thead > tr > td > select#cbx04.form-control.appearance {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+    -ms-appearance: none !important;
+    appearance: none !important;
+    border: none !important;
+    background: none !important;
+}
+
+html > body > div.form-group > table.table.StyleTable > thead > tr > td > select#cbx05.form-control.appearance {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+    -ms-appearance: none !important;
+    appearance: none !important;
+    border: none !important;
+    background: none !important;
+}
+
+
+select::-ms-expand {
+    display: none !important;
+}
+
+.noarrow {
+    overflow: hidden !important;
+}
+
+    .noarrow select {
+        width: 100px !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        -o-appearance: none !important;
+        -ms-appearance: none !important;
+        appearance: none !important;
+    }
+
+

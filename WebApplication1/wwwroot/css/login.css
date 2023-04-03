@@ -17,10 +17,16 @@ form {
     min-height: 500px;
     height: auto;
     border-radius: 5px;
-    border: 1px solid #418BCA;
+    /*border: 1px solid #418BCA;*/
     margin: 2% auto;
     padding: 2%;
     background-image: linear-gradient(-180deg, #fff 98%, #418BCA 98%);
+
+    border-radius:10px;
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.35);
+    -webkit-backdrop-filter: blur(15px);
 }
 
     form .con {
@@ -48,65 +54,12 @@ header {
         letter-spacing: 0.05em;
     }
 
-
-.input-item {
-    background: #418BCA;
-    color: #fff;
-    padding: 15px 0px 14px 9px;
-    border-radius: 5px 0px 0px 5px;
-}
-
 .input-item-pwd {
     background: #418BCA;
     color: #fff;
-    padding: 14px 0px 15px 15px;
+    padding: 15px 0px 15px 15px;
     border-radius: 5px 0px 0px 5px;
 }
-
-
-
-
-#eye {
-    background: transparent;
-    color: #333;
-    margin: 5.9px 0 0 0;
-    margin-left: -20px;
-    padding: 15px 9px 19px 0px;
-    border-radius: 0px 5px 5px 0px;
-    float: right;
-    position: relative;
-    right: 1%;
-    top: -.2%;
-    z-index: 5;
-    cursor: pointer;
-}
-
-input[class="form-input"] {
-    width: 250px;
-    height: 50px;
-    margin-top: 2%;
-    padding: 15px;
-    font-size: 16px;
-    font-family: 'Abel', sans-serif;
-    color: #5E6472;
-    outline: none;
-    border: none;
-    border-radius: 0px 5px 5px 0px;
-    transition: 0.2s linear;
-    border: 1px solid #418BCA;
-}
-
-input[id="txt-input"] {
-    width: 250px;
-    border: 1px solid #418BCA;
-}
-
-
-input:focus {
-    transform: translateX(-2px);
-    border-radius: 0px 5px 5px 0px;
-}
-
 
 button {
     display: inline-block;

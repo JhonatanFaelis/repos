@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebApplication1</title>
+    <title>@ViewData["Title"] L | R - Válvulas Industriais </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
@@ -29,6 +29,10 @@
         .a:active #acesso_pvd {
             color: black;
         }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
     </style>
 
 </head>
@@ -43,15 +47,37 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
+
+                <div style="margin: 0 auto">
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+                        <div class="btn-group">
+                            <ul class="navbar-nav mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Cadastros</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Movimentações</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Financeiro</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Configurações</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </nav>
     </header>
+
     <div class="container m-b-0">
         <main role="main" class="">
             @RenderBody()
         </main>
     </div>
-
 
 </body>
 </html>

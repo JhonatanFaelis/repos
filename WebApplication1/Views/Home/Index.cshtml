@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <form action="" method="post" class="panel panel-primary" style="">
+    <form action="/Home/Privacy" method="post" class="panel panel-primary" style="">
         <div class="row">
 
             <!-- Div/Container imagem -->
@@ -63,7 +63,8 @@
                 </div>
 
                 <!-- Botão Confirmar (autenticação de Login) -->
-                <button class="log-in"> Confirmar </button>
+                @*<a href="javascript:window.location.href='/Config/Details_Config?aba_versao=s&loginConfig='+$('#loginConfig').val();" class="btn btn-danger btn-sm">Liberar acesso</a>*@
+                <button href="javascript:window.location.href='/Home/Privacy?=s&loginConfig='+$('#loginConfig').val();" class="log-in"> Confirmar </button>
             </div>
         </div>
     </form>

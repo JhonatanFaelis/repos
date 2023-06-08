@@ -1,0 +1,56 @@
+﻿
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.topbar {
+    /*background-color: var(--bs-success);*/
+    background-color: transparent;
+    background-image: linear-gradient(90deg, #06283D 40%, #256D85 50%, #06283D 100%);
+    line-height:60px;
+}
+
+.topbar .logo a{
+    /*font-weight:800;*/
+    font-size:2rem;
+    text-decoration:none;
+    color: var(--bs-white);
+}
+
+.topbar .toggle{
+    text-align:right;
+}
+
+.topbar .toggle a{
+    color: var(--bs-white);
+    font-size:1rem;
+    display:inline-block;
+}
+
+.offcanvas-body ul li a{
+    display:block;
+    font-size:17px;
+    font-weight:500;
+    text-decoration:none;
+}
+
+/* Adicionar cor de fundo para destacar os itens do accordion */
+.accordion-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Personalizar fonte e cor do texto */
+.accordion-header {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.accordion-body {
+    font-size: 14px;
+    color: #555;
+}

@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Styles.Render("~/Content/css")
+<link rel="stylesheet" href="~/Content/login.css">
+
+<style>
+    @@media only screen and (max-width: 600px) {
+        form {
+            width: auto
+        }
+
+            form .con {
+                flex-direction: column;
+                align-content: center;
+            }
+    }
+
+    #txt-input-chave {
+        text-transform: uppercase !important;
+    }
+</style>
+
+<main>
+    <form action="/Home/Menu" method="post" class="panel panel-primary" style="">
+        <div class="row">
+
+            <!-- Div/Container imagem -->
+            <div class="col-md-12" style="">
+                <div style="padding-bottom:12px; text-align:center">
+                    <div>
+                        <img width="300px" src="~/Imagens/Logo_LR.jpeg" alt="" class="" style="border: 1px ridge gray; border-radius:10px">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Div/Container inputs e button -->
+            <div class="field-set text-center ">
+
+                <!-- Div/Container ínputs (apenas) -->
+                <div style="padding:10px 0 0 0">
+                    <div class="input-group flex-nowrap w-75 m-auto">
+                        <span class="input-group-text" id="basic-addon1">
+                            <svg width="16" height="16" fill="currentColor" class="bi bi-person-fill">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+                            </svg>
+                        </span>
+                        <input type="text" class="form-control" placeholder="Login" aria-label="Username" aria-describedby="addon-wrapping" required>
+                    </div>
+
+                    <div class="input-group w-75" style="margin:10px auto">
+                        <span class="input-group-text" id="basic-addon1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                                <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
+                            </svg>
+                        </span>
+                        <input type="password" class="form-control" placeholder="Senha" aria-label="Input group example" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+
+                <!-- Botão Confirmar (autenticação de Login) -->
+                @*<a href="javascript:window.location.href='/Config/Details_Config?aba_versao=s&loginConfig='+$('#loginConfig').val();" class="btn btn-danger btn-sm">Liberar acesso</a>*@
+                <button href="javascript:window.location.href='/Home/Menu?=s&loginConfig='+$('#loginConfig').val();" class="log-in"> Confirmar </button>
+            </div>
+        </div>
+    </form>
+</main>

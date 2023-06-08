@@ -1,9 +1,0 @@
-﻿#clientes tbody td {
-    border: 1px #DDD solid;
-    cursor: pointer;
-}
-
-.selected {
-    background-color: darkorange;
-    color: #FFF;
-}
